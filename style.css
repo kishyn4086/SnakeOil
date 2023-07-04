@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "G2-Erika-Mono";
+  font-weight: 700;
+  src: url("G2-Erika-Mono.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* #gameover{
+  margin-bottom: 13vh;
+  position: absolute;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  bottom: 66vh;
+  display: none;
+} */
+
+.mobile{
+  display: none;
+}
+
+
+
+.intro .about{
+  position: absolute;
+  text-align: center;
+  right: 0;
+  left: 0;
+  top: 15vw;
+  bottom: auto;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 1vw;
+  position: relative;
+  margin-top: 1.5vw;
+}
+
+button {
+  border: none;
+  font-size: 0.8vw;
+  font-family: "G2-Erika-Mono";
+  margin-top: 1.5vw;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: underline;
+
+}
+
+#infotext{
+  display: none;
+  width: 13.1vw;
+  height: 19.85vw;
+  overflow: scroll;
+  align-items:center;
+  text-align: center;
+  font-size: 0.8vw;
+  word-break: break-word;
+  hyphens: auto;
+  margin-bottom: -1.5vw;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  font-family: arial;
+  position: relative;
+  text-align: center;
+  font-family: "G2-Erika-Mono";
+  font-size: 1vw;
+  overflow: hidden;
+}
+
+/* title */
+header {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 10px;
+  padding: 20px 10px;
+  color: white;
+}
+
+.obstacle {
+  position: absolute;
+  /* background: #ffff0050; */
+}
+
+img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* main table */
+.snakeTable {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* all boxes in the table */
+.box {
+  background: white;
+  width: 1vw;
+  height: 1vw;
+  content: "/";
+  font-size: 1vw;
+  line-height: 1vw;
+  color: black;
+}
+
+.food {
+  animation: spin 0.75s linear infinite;
+  transform-origin: center;
+  height: 1vw;
+  display: inline-block;
+  padding-top: 0.4vh;
+}
+
+.food::after {
+  font-size: 1.5vw;
+  content: "*";
+  display: inline-block;
+  display: center;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.snake:after {
+  font-family: "G2-Erika-Mono";
+  font-size: 0.9vw;
+  font-weight: lighter;
+  content: "/";
+}
+
+/* bar showing status below table */
+.status {
+  position: fixed;
+  height: 22vh;
+  top: 1.2vw;
+  right: 1.2vw;
+}
+
+.score {
+  width: 8vw;
+  float: right;
+  text-align: right;
+  padding: 0 2vw;
+}
+
+.score:first-of-type{
+  width: 7vw
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* modular window before and after game */
+.modul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+/* .start {
+  background-color: ;
+} */
+
+.start span {
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+span{
+  margin-bottom: 80vw;
+}
+
+
+
+
+
+@media screen and (max-width: 1180px) {
+  .snakeTable{
+    display: none;
+    overflow: hidden;
+  }
+
+ .modul{
+   display: none;
+   overflow: hidden;
+ }
+
+  .mobile{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    font-size: 6vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobiletext{
+    margin-top: 3vw;
+    margin-left: 3vw;
+    text-align: left;
+    height: 40vh;
+    width: 100vw;
+  }
+
+}
+
+@media screen and (max-width: 375px){
+  .snakeTable{
+    display: none;
+    overflow: hidden;
+  }
+
+ .modul{
+   display: none;
+   overflow: hidden;
+ }
+
+  .mobile{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    font-size: 6vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobiletext{
+    margin-top: 3vw;
+    margin-left: 3vw;
+    text-align: left;
+    height: 40vh;
+    width: 100vw;
+  }
+}

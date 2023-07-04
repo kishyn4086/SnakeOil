@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Oil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section class="snakeTable"></section>
+  <section class="modul">
+    <div class="start">
+        <span>
+          <div class="intro">
+            <h1>&#8727; — — — — — — — — — — — &#8727;</h1>
+            <div class="introtext">
+            <h2>Snake Oil</h2>
+
+            <h2>1. make 0 MB<br>
+            to complete<br>
+            the game</h2>
+
+            <h2>
+              2. use ← ↑ → Key to<br>
+              controll the snake
+            </h2>
+
+            <h2>
+              3. Press → key<br>
+              to start
+            </h2>
+            <button id="info">About</button>
+          </div>
+          <div id="infotext">
+            <p id="info">Snake Oil is a computer g&shy;ame inspired by a mobile Snake game that originally appeared on a Nokia device. This game is a project that addresses the issue of digital consumption and its environmental impact from the perspective of designers or developers. To enhance the visual experience, the size of game files tends to increase as more resources are utilized for graphics, sound, video, textures, scripts, and other elements. However, at some point, the fascination with simplicity has faded. This project is designed to demonstrate how a lightweight viewing experience can still provide a better user experience by removing unnecessary features and optimizing the site's performance in simplified conditions.<button id="about">back</button></p>
+          </div>
+            <h4>&#8727; — — — — — — — — — — — &#8727;</h4>
+        </span>
+      </div>
+     </section>
+
+    <section class="mobile">
+      <p class="mobiletext">Snake Oil Game is optimized for desktop.</p>
+    </section>
+
+  <script src="./script.js"></script>
+  <script>
+     
+    document.getElementById('info').addEventListener('click', function abouttext (){document.getElementsByClassName('introtext')[0].style.display='none';
+    document.getElementById('infotext').style.display='block';})
+
+    document.getElementById('about').addEventListener('click', function abouttext (){document.getElementsByClassName('introtext')[0].style.display='block';
+    document.getElementById('infotext').style.display='none';})
+   
+    const sentenceElement = document.querySelector(".mobiletext");
+const sentence = sentenceElement.textContent;
+
+setTimeout(() => {
+  let curentmobileText = sentence.split(" ").length - 1;
+
+  const timer = setInterval(() => {
+    if (curentmobileText < 0) {
+      clearInterval(timer);
+      return;
+    }
+
+    const modifiedSentence = sentence
+      .split(" ")
+      .map((word, index) => {
+        if (index >= curentmobileText) {
+          return "";
+        } else {
+          return word;
+        }
+      })
+      .join(" ");
+
+    sentenceElement.innerHTML = modifiedSentence;
+
+    curentmobileText--;
+  }, 1000);
+}, 1500);
+
+    // function eraseword(){
+    //   document.getElementsByClassName('erase')[0].style.color='white';
+    // }
+
+    // function eraseword2(){
+    //   document.getElementsByClassName('erase')[1].style.color='white';
+    // }
+
+    // function eraseword3(){
+    //   document.getElementsByClassName('erase')[2].style.color='white';
+    // }
+
+    // function eraseword4(){
+    //   document.getElementsByClassName('erase')[3].style.color='white';
+    // }
+
+    // setInterval( eraseword, 1000);
+    // setInterval( eraseword2, 2000);
+    // setInterval( eraseword3, 3000);
+    // setInterval( eraseword4, 4000);
+  
+
+    // var eraseword = document.getElementsByClassName(erase);
+
+    // console.log(eraseword.length);
+    
+    // for(var i = 0; i < eraseword.length; i++){
+      
+    // }
+
+
+    
+   
+
+
+    
+  </script>
+</body>
+</html>
+
+<!-- 
+    TO DO LIST
+        <Obstacles>
+        -Img Position Random
+        -display ab zwetie Runde 
+        -für 5 sec. zeigen dann wieder weg
+        --hit Border + 5 MB 
+
+        -8 Round game complete
+    -->
